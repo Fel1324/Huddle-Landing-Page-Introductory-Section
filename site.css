@@ -1,0 +1,226 @@
+/* GLOBAL */
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --shadow: hsla(0, 0%, 0%, 0.527);
+    --special-shadow: hsla(257, 70%, 40%, 0.747);
+
+    --primary-color: hsl(0, 0%, 100%);
+    --bg-color: hsl(257, 40%, 49%);
+    --hover-color: hsl(300, 69%, 71%);
+
+    --headings-font-family: 'Poppins', sans-serif;
+    --body-font-family: 'Open Sans', sans-serif;
+}
+
+html, body{
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+
+    font-size: 1rem;
+    font-family: var(--body-font-family);
+
+    color: var(--primary-color);
+}
+
+body{
+    background: var(--bg-color) url('images/bg-mobile.svg') no-repeat top center / 100%;
+}
+
+.container{
+    width: 100%;
+    max-width: 25rem; /* 400px */
+    margin-inline: auto;
+
+    padding: 1.875rem; /* 30px */
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    vertical-align: top;
+}
+
+/* HEADER */
+.header{
+    width: 100%;
+}
+
+.header__logo{
+    width: 9.375rem; /* 150px */
+}
+
+/* MAIN */
+.main{
+    width: 100%;
+}
+
+.main__content{
+    display: grid;
+    gap: 3.75rem; /* 60px */ 
+}
+
+.main__illustration{
+    width: 100%;
+}
+
+.main__col-b{
+    text-align: center;
+}
+
+.main__title{
+    font-size: 1.5rem; /* 24px */
+    font-family: var(--headings-font-family);
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.main__paragraph{
+    line-height: 1.5;
+
+    margin-block: 1rem;
+}
+
+.main__button{
+    display: inline-block;
+
+    background-color: var(--primary-color);
+    border-radius: 2.5rem; /* 40px */
+    
+    font-family: var(--headings-font-family);
+    font-weight: 400;
+
+    width: 70%;
+
+    padding-block: 0.875rem; /* 14px */
+
+    margin-top: 0.563rem; /* 9px */
+
+    transition: all .3s ease-in-out;
+
+    -webkit-box-shadow: 0px 0px 0.938rem 0.125rem var(--shadow); /* 15px e 2px */
+    -moz-box-shadow: 0px 0px 0.938rem 0.125rem var(--shadow); /* 15px e 2px */
+    box-shadow: 0px 0px 0.938rem 0.125rem var(--shadow); /* 15px e 2px */
+}
+
+.main__button:hover{
+    background-color: var(--hover-color);
+
+    color: var(--primary-color);
+}
+
+.main__button:focus{
+    outline: 0;
+
+    -webkit-box-shadow: 0px 0px 0.938rem 0.125rem var(--special-shadow); /* 15px e 2px */
+    -moz-box-shadow: 0px 0px 0.938rem 0.125rem var(--special-shadow); /* 15px e 2px */
+    box-shadow: 0px 0px 0.938rem 0.125rem var(--special-shadow); /* 15px e 2px */
+}
+
+/* FOOTER */
+.footer{
+    width: 100%;
+}
+
+.footer__social-links{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    list-style: none;
+}
+
+.social-links__icon{
+    width: 2.188rem; /* 35px */
+
+    transition: fill .3s ease-in-out;
+}
+
+.social-links__icon:hover{
+    fill: var(--hover-color);
+}
+
+/* RESPONSIVIDADE */
+@media screen and (min-width: 1024px) {
+    /* GERAL */
+    body{
+        background: var(--bg-color) url('images/bg-desktop.svg') no-repeat top center / 100%;
+    }
+
+    .container{
+        max-width: 90rem; /* 1440px */
+    }
+
+    /* HEADER */
+    .header__content{
+        padding-top: 3rem; /* 48px */    
+    }
+
+    .header__logo{
+        width: 12.5rem; /* 200px */
+    }
+
+    /* MAIN */
+    .main__content{
+        display: grid;
+        grid-template-columns: 1fr .75fr;
+        gap: 3rem; /* 48px */ 
+    }
+
+    .main__col-a{
+        text-align: center;
+    }
+
+    .main__illustration{        
+        max-width: 46.875rem; /* 750px */
+    }
+
+    .main__col-b{
+        text-align: left;
+
+        align-self: center;
+    }
+
+    .main__title{
+        font-size: 2.25rem; /* 48px */
+
+        max-width: 28.875rem; /* 462px */
+    }
+
+    .main__paragraph{
+        max-width: 28.875rem; /* 462px */
+    }
+
+    .main__button{
+        text-align: center;
+        width: 50%;
+        max-width: 12.5rem; /* 200px */
+    }
+
+    /* FOOTER */
+    .footer__content{
+        padding-top: 0;
+    }
+
+    .footer__social-links{
+        justify-content: flex-end;
+    }
+
+    .social-links__icon{
+        width: 2.75rem; /* 44px */
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .main__title{
+        font-size: 2.5rem; /* 40px */
+    }
+}
